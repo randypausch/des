@@ -82,7 +82,6 @@ if __name__ == '__main__':
 
 	for i in tqdm(range(len(district_ls))):
 		if i != 0  and i != 15 and i != 22 and i != 38: #Ignoring Airport Quarantine, Railway Quarantine, Mayiladuthurai, and unknown
-			plt.figure(figsize=(20, 8))
 			fig = go.Figure()
 			confirmed = districts_data[i].Confirmed
 			recovered = districts_data[i].Recovered
