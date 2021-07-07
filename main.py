@@ -75,7 +75,7 @@ if __name__ == '__main__':
 	districts_data, district_ls = read_districts_csv()
 	figures = []
 	start_date = date(2021,2,28)
-	end_date = date(2021,7,1)
+	end_date = datetime.date.today() - datetime.timedelta(days=1)
 	pred_end = end_date + datetime.timedelta(days=15) #Accounting for 0 in the DES Model :p
 
 	diff_for_df = (start_date - end_date).days #Useful for comprehending
