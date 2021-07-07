@@ -87,6 +87,7 @@ if __name__ == '__main__':
 			recovered = districts_data[i].Recovered
 			deceased = districts_data[i].Deceased
 			strr, doubling = doubling_rate(confirmed, recovered, deceased)
+      
 
 			if i == 13: #Handling Krishnagiri's missing values 
 				confirmed = list(confirmed)
@@ -123,23 +124,14 @@ if __name__ == '__main__':
 
 				
 			fig.update_traces(mode="markers+lines")
-
+      
 			fig.update_xaxes(showspikes=True)
 			fig.update_yaxes(showspikes=True)
 			fig.update_yaxes(rangemode="nonnegative")
 			fig.update_layout(
-			    title="{} - New Cases and Predictions using DES".format(str(district_ls[i])),
-			    xaxis_title="Dates",
-			    yaxis_title="New Cases",
-			    legend_title="{}: {:0.2f}".format(strr, doubling),
-			    font=dict(
-			        family="Ubuntu, Ubuntu Monospace",
-			        size=19,
-			        color="RebeccaPurple"
-			    ),
-
-			    showlegend=True
-
+			    title="{} - New Cases and Predictions using DES - {}: {}".format(str(district_ls[i]), strr, doubling),
+          xaxis_title="Dates",
+			    yaxis_title="New Cases"
 			)
 			figures.append(fig)
 	with open('results.html', 'w') as f:
